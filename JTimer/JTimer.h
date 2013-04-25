@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface JTimer : NSObject
++ (instancetype)scheduledTimerWithTimeInterval:(NSTimeInterval)timeInterval eventHandler:(void (^)(void))handler;
++ (instancetype)scheduledTimerWithTimeInterval:(NSTimeInterval)timeInterval queue:(dispatch_queue_t)queue eventHandler:(void (^)(void))handler;
 
+- (void)invalidate;
+- (void)reschedule;
 @end
