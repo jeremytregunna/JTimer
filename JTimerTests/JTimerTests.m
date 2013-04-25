@@ -29,15 +29,15 @@
 
 - (void)testTimerFires
 {
-    JTimer* timer __attribute__((unused)) = [JTimer scheduledTimerWithTimeInterval:1 eventHandler:nil];
-    NSTimer* osTimer __attribute__((unused)) = [NSTimer scheduledTimerWithTimeInterval:1.1 target:self selector:@selector(checkTimer) userInfo:nil repeats:NO];
+    __unused JTimer* timer = [JTimer scheduledTimerWithTimeInterval:1 eventHandler:nil];
+    __unused NSTimer* osTimer = [NSTimer scheduledTimerWithTimeInterval:1.1 target:self selector:@selector(checkTimer) userInfo:nil repeats:NO];
 }
 
 - (void)testTimerFiresOnDifferentQueue
 {
     dispatch_queue_t queue = dispatch_queue_create("test.queue", 0);
-    JTimer* timer __attribute__((unused)) = [JTimer scheduledTimerWithTimeInterval:1 queue:queue eventHandler:nil];
-    NSTimer* osTimer __attribute__((unused)) = [NSTimer scheduledTimerWithTimeInterval:1.1 target:self selector:@selector(checkTimer) userInfo:nil repeats:NO];
+    __unused JTimer* timer = [JTimer scheduledTimerWithTimeInterval:1 queue:queue eventHandler:nil];
+    __unused NSTimer* osTimer = [NSTimer scheduledTimerWithTimeInterval:1.1 target:self selector:@selector(checkTimer) userInfo:nil repeats:NO];
 }
 
 - (void)checkTimer

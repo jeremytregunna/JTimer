@@ -12,6 +12,9 @@
 {
     dispatch_queue_t _timerQueue;
     dispatch_source_t _timer;
+
+    NSTimeInterval _timeInterval;
+    void (^_handler)(void);
     BOOL _valid;
 }
 
@@ -28,18 +31,8 @@
 {
     if((self = [super init]))
     {
-        _valid = YES;
         _timerQueue = queue;
-        _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, _timerQueue);
-        if(_timer)
-        {
-            dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), timeInterval * NSEC_PER_SEC, 30 * NSEC_PER_MSEC);
-            dispatch_source_set_event_handler(_timer, ^{
-                if(_valid && handler)
-                    handler();
-            });
-            dispatch_resume(_timer);
-        }
+        [self reschedule];
     }
     return self;
 }
@@ -47,11 +40,22 @@
 - (void)invalidate
 {
     _valid = NO;
+    _timer = nil;
 }
 
 - (void)reschedule
 {
     _valid = YES;
+    _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, _timerQueue);
+    if(_timer)
+    {
+        dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), _timeInterval * NSEC_PER_SEC, 30 * NSEC_PER_MSEC);
+        dispatch_source_set_event_handler(_timer, ^{
+            if(_valid && _handler)
+                _handler();
+        });
+        dispatch_resume(_timer);
+    }
 }
 
 @end
