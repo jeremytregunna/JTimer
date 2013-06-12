@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>48540443-E771-4D0D-B3CE-2D88EEECE115</string>
+	<key>IDESourceControlProjectName</key>
+	<string>JTimer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3838DA81-39E1-4CB9-B12D-6DE8FC94E039</key>
+		<string>ssh://github.com/jeremytregunna/JTimer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>JTimer.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3838DA81-39E1-4CB9-B12D-6DE8FC94E039</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/jeremytregunna/JTimer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3838DA81-39E1-4CB9-B12D-6DE8FC94E039</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3838DA81-39E1-4CB9-B12D-6DE8FC94E039</string>
+			<key>IDESourceControlWCCName</key>
+			<string>JTimer</string>
+		</dict>
+	</array>
+</dict>
+</plist>
